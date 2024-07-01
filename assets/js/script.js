@@ -76,6 +76,9 @@ addImageBtn.addEventListener('click', function () {
     currentElement = img;
     // ? We attach the mouse move event listener to the document and the mood board div so that the element can be dragged anywhere on the screen and dropped only on the mood board div.
     attachMouseListeners();
+
+    tempStorageObject.images.push(imageUrl);
+    updateLocalStorage();
   }
 });
 
@@ -97,6 +100,9 @@ addTextBtn.addEventListener('click', function () {
     //the click listener to the mood board div so that the element can be dragged
     //anywhere on the screen, but dropped only on the mood board div.
     attachMouseListeners();
+
+    tempStorageObject.text.push(text);
+    updateLocalStorage();
   }
 });
 
@@ -172,4 +178,3 @@ function placeElementClickHandler(event) {
 
 // ? Load existing data from local storage on page load
 window.onload = loadFromLocalStorage;
-
